@@ -52,13 +52,3 @@
 ```
 
     
-
----
-
-![](./4-productive-time.svg)
-
-```
-![](https://raw.githubusercontent.com/kosuke-fujishiro/kosuke-fujishiro/master/profile-summary-card-output/gruvbox/4-productive-time.svg)
-```
-
-    
