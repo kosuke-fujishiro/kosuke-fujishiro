@@ -2,8 +2,8 @@ name: GitHub-Profile-Summary-Cards
 
 on:
   push:
-  schedule: # execute every 24 hours
-    - cron: "* */24 * * *"
+  schedule: # execute every day at 00:00 UTC (09:00 JST)
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -12,9 +12,10 @@ jobs:
     name: generate
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: vn7n24fzkq/github-profile-summary-cards@09ba4dde3f9b05828cb99553561db3f4ff07703f # release branch head (v0.12.0 + d3 hotfix), 2026-08-06
         env:
           GITHUB_TOKEN: ${{ secrets.SUMMARY_CARDS_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
+          UTC_OFFSET: "9"
